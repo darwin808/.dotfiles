@@ -1,0 +1,60 @@
+{
+  "editor.minimap.enabled": false,
+  "workbench.sideBar.location": "right",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "MesloLGS NF",
+  "editor.fontLigatures": true,
+  "editor.codeLensFontFamily": "'Fira Code'",
+  "terminal.explorerKind": "external",
+  "terminal.external.linuxExec": "kitty",
+  "breadcrumbs.enabled": false,
+  "editor.renderWhitespace": "none",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "plaintext": "pug"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "search.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/build": true,
+    "**/bower_components": true,
+    "**/tmp": true,
+    "yarn.lock": true,
+    "package.json": true,
+    "package.lock.json": true,
+    ".*": true
+  },
+  "workbench.startupEditor": "none",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.editor.enablePreview": false,
+  "ponicode.token": "757168b5-9355-463e-8ce4-e7044a2bc1f9",
+  // "workbench.iconTheme": "material-icon-theme",
+  "window.menuBarVisibility": "toggle",
+  "workbench.colorTheme": "Bear Theme",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.lineNumbers": "relative",
+  "editor.cursorSurroundingLines": 9999,
+  "workbench.colorCustomizations": {
+    "editorLineNumber.activeForeground": "#FF9D5f",
+    "editor.selectionBackground": "#135564",
+    "editor.selectionHighlightBackground": "#135564",
+    "editorCursor.foreground": "#ff9d5c",
+    "terminalCursor.foreground": "#ff9d5c"
+  },
+  "window.zoomLevel": 1
+}
+
