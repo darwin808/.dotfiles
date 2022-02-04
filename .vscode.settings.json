@@ -1,21 +1,26 @@
 {
   "editor.minimap.enabled": false,
   "editor.scrollbar.horizontal": "hidden",
-  "editor.folding": false,
-  "editor.glyphMargin": true,
+  "editor.folding": true,
+  "editor.glyphMargin": false,
   "editor.scrollbar.vertical": "hidden",
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.organizeImports": true
-  },
+  "breadcrumbs.enabled": false,
+
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll": true,
+  //   "source.organizeImports": true
+  // },
   "eslint.workingDirectories": [{ "mode": "auto" }],
   "workbench.sideBar.location": "right",
   "vim.leader": "<space>",
-  "vscode_custom_css.imports": [""],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "w"],
       "commands": ["workbench.action.splitEditor"]
+    },
+    {
+      "before": ["<leader>", "s"],
+      "commands": ["workbench.action.file.save"]
     },
     {
       "before": ["<leader>", "e"],
@@ -40,20 +45,18 @@
       "after": ["<Esc>"]
     }
   ],
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   // "editor.fontFamily": "Source Code Pro for Powerline",
   // "editor.fontFamily": "MesloLGS NF",
-  "editor.fontFamily": "Fira Code",
+  // "editor.fontFamily": "Fira Code",
+  "editor.fontFamily": "jetBrains Mono",
   "editor.fontLigatures": true,
   "editor.codeLensFontFamily": "'Fira Code'",
   "terminal.explorerKind": "external",
   "terminal.external.linuxExec": "kitty",
-  "breadcrumbs.enabled": false,
   "editor.renderWhitespace": "none",
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
@@ -79,7 +82,6 @@
   },
   "workbench.startupEditor": "none",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "workbench.editor.enablePreview": false,
   "ponicode.token": "757168b5-9355-463e-8ce4-e7044a2bc1f9",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "editor.lineNumbers": "relative",
@@ -88,27 +90,37 @@
   "editor.cursorStyle": "block",
   "editor.renderLineHighlight": "none",
   "workbench.colorCustomizations": {
-    // "editor.background": "#22272E",
+    // "editor.background": "#282828",
     // "editorGutter.background": "#22272E",
-    "editorLineNumber.activeForeground": "#656565",
-    "editorLineNumber.foreground": "#F6A519",
-    // "editor.selectionBackground": "#135564",
-    "editor.selectionHighlightBackground": "#135564",
-    // "editorCursor.foreground": "#F6a519",
-    "terminalCursor.foreground": "#FFF",
-    "statusBar.background": "#333333",
-    "statusBar.foreground": "#F6A519",
+    "editorLineNumber.activeForeground": "#fe8019",
+    // "editorLineNumber.foreground": "#D65D0E",
+    // "editor.selectionBackground": "#666727",
+    "editor.selectionForeground": "#333333",
+    // "editor.selectionHighlightBackground": "#fb4934",
+    "editorCursor.foreground": "#FB4934",
+    "editorCursor.background": "#222222",
+    "terminalCursor.foreground": "#fe8019"
+    // "statusBar.background": "#333333",
+    // "statusBar.foreground": "#FE8019",
     // "statusBar.noFolderBackground": "#212121",
-    "statusBar.debuggingBackground": "#263238"
+    // "statusBar.debuggingBackground": "#263238"
   },
   "editor.renderIndentGuides": false,
   "terminal.integrated.fontFamily": "MesloLGS NF",
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
-  "window.menuBarVisibility": "hidden",
-  "window.zoomLevel": 3,
   "workbench.iconTheme": "vs-seti",
-  "workbench.colorTheme": "Bear Theme",
-  "workbench.activityBar.visible": false
+  "redhat.telemetry.enabled": false,
+  "go.toolsManagement.autoUpdate": true,
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "quokka.compactMessageOutput": true,
+  "quokka.automaticRestart": true,
+  "thunder-client.codeSnippetLanguage": "cs-httpclient",
+  "bracket-pair-colorizer-2.depreciation-notice": false,
+  "window.menuBarVisibility": "toggle",
+  "window.zoomLevel": 2,
+  "workbench.colorTheme": "Bear Theme"
 }
