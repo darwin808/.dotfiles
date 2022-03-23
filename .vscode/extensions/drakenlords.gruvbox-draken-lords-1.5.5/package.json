@@ -1,0 +1,53 @@
+{
+	"name": "gruvbox-draken-lords",
+	"displayName": "Gruvbox DrakenLords",
+	"description": "Gruvbox Dark Collections by DrakenLords 🐉",
+	"version": "1.5.5",
+	"publisher": "DrakenLords",
+	"icon": "icon.png",
+	"galleryBanner": {
+		"color": "#1d2021",
+		"theme": "dark"
+	},
+	"homepage": "https://github.com/Drakenlords/Gruvbox-DrakenLords",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Drakenlords/Gruvbox-DrakenLords"
+	},
+	"engines": {
+		"vscode": "^1.15.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Gruvbox DrakenLords Dark Draken",
+				"uiTheme": "vs-dark",
+				"path": "./themes/gruvbox-1.json"
+			},
+			{
+				"label": "Gruvbox DrakenLords Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/gruvbox-2.json"
+			},
+			{
+				"label": "Gruvbox DrakenLords Semi Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/gruvbox-3.json"
+			},
+			{
+				"label": "Gruvbox DrakenLords Grey",
+				"uiTheme": "vs-dark",
+				"path": "./themes/gruvbox-4.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "797f9b38-d73b-4972-af1c-17c1f23149c8",
+		"publisherId": "be8c072b-acb3-49f8-b4db-f3a90717d552",
+		"publisherDisplayName": "DrakenLords",
+		"installedTimestamp": 1634968517545
+	}
+}

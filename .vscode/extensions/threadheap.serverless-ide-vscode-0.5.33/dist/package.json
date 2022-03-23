@@ -1,0 +1,184 @@
+{
+    "name": "serverless-ide-vscode",
+    "displayName": "Serverless IDE",
+    "description": "Enhanced support for AWS SAM, CloudFormation and Serverless Framework",
+    "author": "Pavel Vlasov <pavel@serverless-ide.com>",
+    "publisher": "ThreadHeap",
+    "license": "MIT",
+    "version": "0.5.33",
+    "preview": false,
+    "bugs": "https://github.com/threadheap/serverless-ide-vscode/issues",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/threadheap/serverless-ide-vscode"
+    },
+    "icon": "icon/icon.png",
+    "engines": {
+        "vscode": "^1.37.0"
+    },
+    "categories": [
+        "Other",
+        "Programming Languages",
+        "Linters",
+        "Snippets",
+        "Formatters"
+    ],
+    "galleryBanner": {
+        "color": "#1b1c1d",
+        "theme": "dark"
+    },
+    "activationEvents": [
+        "onLanguage:yaml"
+    ],
+    "keywords": [
+        "serverless",
+        "aws",
+        "sam",
+        "serverless framework",
+        "sls",
+        "cloudformation",
+        "autocompletion",
+        "validation",
+        "cfn",
+        "yaml"
+    ],
+    "main": "./dist/src/extension",
+    "contributes": {
+        "languages": [
+            {
+                "id": "yaml",
+                "aliases": [
+                    "YAML",
+                    "yaml"
+                ],
+                "extensions": [
+                    ".yml",
+                    ".yaml"
+                ],
+                "filenames": [],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "commands": {
+            "command": "ServerlessIDE.installCfnLint",
+            "title": "Install cfn-lint",
+            "category": "helpers"
+        },
+        "grammars": [
+            {
+                "language": "yaml",
+                "scopeName": "source.yaml",
+                "path": "./syntaxes/yaml.tmLanguage.json"
+            }
+        ],
+        "yamlValidation": [],
+        "configuration": {
+            "type": "object",
+            "title": "Serverless IDE configuration",
+            "properties": {
+                "serverlessIDE.validationProvider": {
+                    "type": "string",
+                    "enum": [
+                        "default",
+                        "cfn-lint"
+                    ],
+                    "default": "cfn-lint",
+                    "description": "Set to cfn-lint to use it as validation provider"
+                },
+                "serverlessIDE.cfnLint.path": {
+                    "type": "string",
+                    "default": "cfn-lint",
+                    "description": "Path to cfn-lint"
+                },
+                "serverlessIDE.cfnLint.appendRules": {
+                    "type": "array",
+                    "default": [],
+                    "description": "Append Rules Directories"
+                },
+                "serverlessIDE.cfnLint.ignoreRules": {
+                    "type": "array",
+                    "default": [],
+                    "description": "Ignore Rules"
+                },
+                "serverlessIDE.cfnLint.overrideSpecPath": {
+                    "type": "string",
+                    "default": "",
+                    "description": "(Optional) Path to an override specfile json file"
+                },
+                "serverlessIDE.trace.server": {
+                    "type": "string",
+                    "enum": [
+                        "off",
+                        "messages",
+                        "verbose"
+                    ],
+                    "default": "off",
+                    "description": "Traces the communication between VSCode and the language server service."
+                },
+                "serverlessIDE.validate": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable/disable validation feature"
+                },
+                "serverlessIDE.hover": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable/disable hover feature"
+                },
+                "serverlessIDE.completion": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable/disable completion feature"
+                },
+                "serverlessIDE.telemetry.enableTelemetry": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable/disable telemetry and crash reporting"
+                }
+            }
+        },
+        "configurationDefaults": {
+            "[yaml]": {
+                "editor.insertSpaces": true,
+                "editor.tabSize": 2,
+                "editor.quickSuggestions": {
+                    "other": true,
+                    "comments": false,
+                    "strings": true
+                },
+                "editor.autoIndent": false
+            }
+        }
+    },
+    "scripts": {
+        "build": "npm run clean && npm run compile",
+        "clean": "rm -rf ./dist",
+        "compile": "tsc",
+        "watch": "rm -rf ./dist && npm run build --watch",
+        "prepublishOnly": "npm run build",
+        "marketplace:package": "vsce package",
+        "marketplace:publish": "vsce publish",
+        "vscode:prepublish": "rm -rf node_modules && npm install && npm run compile"
+    },
+    "devDependencies": {
+        "@types/node": "^6.0.52",
+        "@types/vscode": "^1.37.0",
+        "ts-node": "^3.3.0",
+        "typescript": "^3.2.2"
+    },
+    "dependencies": {
+        "@sentry/node": "5.5.0",
+        "@serverless-ide/language-server": "^0.5.33",
+        "amplitude-client-node": "^0.2.0",
+        "lodash": "^4.17.11",
+        "node-machine-id": "^1.1.12",
+        "vscode-extension-analytics": "^0.0.4",
+        "vscode-languageclient": "5.1.1",
+        "vscode-nls": "^3.2.1",
+        "vscode-uri": "^1.0.5"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "gitHead": "390fa05ac004e80dd92b96e08eded82c162ffcd9"
+}

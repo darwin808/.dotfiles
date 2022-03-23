@@ -1,0 +1,425 @@
+{
+	"name": "ponicode",
+	"displayName": "Ponicode",
+	"description": "Ponicode is a quick and easy AI-powered solution for Javascript unit testing.",
+	"version": "0.67.1",
+	"versionTimestamp": "0",
+	"versionInstrumenter": "0.0.1-18",
+	"icon": "favicon.ico",
+	"publisher": "Ponicode",
+	"engines": {
+		"vscode": "^1.37.1"
+	},
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ponicode"
+	},
+	"homepage": "https://ponicode.com",
+	"categories": [
+		"Other",
+		"Extension Packs",
+		"Machine Learning",
+		"Data Science",
+		"Education",
+		"Testing",
+		"Visualization",
+		"Snippets",
+		"Programming Languages"
+	],
+	"keywords": [
+		"unit testing",
+		"JavaScript",
+		"coverage",
+		"jest",
+		"Python"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./dist/main.js",
+	"rootEndpoint": "https://api.ponicode.com/juice/v1",
+	"platformEndpoint": "https://app.ponicode.com",
+	"contributes": {
+		"javaExtensions": [
+			"./assets/com.ponicode.ls-0.2.0.jar"
+		],
+		"configuration": {
+			"title": "Ponicode",
+			"properties": {
+				"ponicode.token": {
+					"type": "string",
+					"default": null,
+					"description": "Specifies the API key used for authentication. If empty, you will be prompted to log in to Ponicode.com."
+				},
+				"ponicode.watchMode": {
+					"type": "boolean",
+					"default": false,
+					"description": "Specifies whether test cases are automatically run with Jest to retrieve pass or fail information"
+				},
+				"ponicode.typescript.runSourceFile": {
+					"type": "string",
+					"default": "Use .js file if exists and is up-to-date",
+					"description": "Specifies how to run Typescript tests",
+					"enum": [
+						"Only use .js file",
+						"Only use .ts file",
+						"Use .js file if exists and is up-to-date"
+					]
+				},
+				"ponicode.nodePath": {
+					"type": "string",
+					"default": null,
+					"description": "Node path for the test runner and tasks. If absent, node is looked up in PATH."
+				},
+				"webview.experimental.useExternalEndpoint": {
+					"type": "boolean",
+					"description": "Work around VS Code issue #83188"
+				},
+				"ponicode.experimental.java": {
+					"type": "boolean",
+					"description": "Enable experimental Java support",
+					"default": false
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "ponicode.openInteractiveView",
+				"title": "Ponicode: Unit Test"
+			},
+			{
+				"command": "ponicode.flashTest",
+				"title": "Ponicode: Flash Test"
+			},
+			{
+				"command": "ponicode.mock",
+				"title": "Ponicode: Mock"
+			},
+			{
+				"command": "ponicode.updateExtension",
+				"title": "Ponicode: Update Ponicode extension"
+			},
+			{
+				"command": "ponicode.feedback",
+				"title": "Ponicode: Send feedback"
+			},
+			{
+				"command": "ponicode.start",
+				"title": "Ponicode: Start extension"
+			},
+			{
+				"command": "ponicode.stop",
+				"title": "Ponicode: Stop extension"
+			},
+			{
+				"command": "ponicode.gettingStarted",
+				"title": "Ponicode: Getting Started"
+			},
+			{
+				"command": "ponicode.signIn",
+				"title": "Ponicode: Sign In"
+			},
+			{
+				"command": "ponicode.generateValues",
+				"title": "Ponicode: Generate Values"
+			},
+			{
+				"command": "ponicode.treeView.selectFile",
+				"title": "Ponicode: Select file from Ponicode Panel"
+			},
+			{
+				"command": "ponicode.openInBrowser",
+				"title": "Ponicode: Open In Browser"
+			},
+			{
+				"command": "ponicode.treeView.toTreeView",
+				"title": "Switch to tree view",
+				"icon": {
+					"light": "images/leftPanel/files/light/list-tree.svg",
+					"dark": "images/leftPanel/files/dark/list-tree.svg"
+				}
+			},
+			{
+				"command": "ponicode.treeView.toListView",
+				"title": "Switch to tree view",
+				"icon": {
+					"light": "images/leftPanel/files/light/list-flat.svg",
+					"dark": "images/leftPanel/files/dark/list-flat.svg"
+				}
+			},
+			{
+				"command": "ponicode.treeView.stop",
+				"title": "Ponicode Side Panel: Stop search",
+				"icon": {
+					"light": "images/leftPanel/files/light/search-stop.svg",
+					"dark": "images/leftPanel/files/dark/search-stop.svg"
+				}
+			},
+			{
+				"command": "ponicode.treeView.resume",
+				"title": "Ponicode Side Panel: Resume search",
+				"icon": {
+					"light": "images/leftPanel/files/light/sync.svg",
+					"dark": "images/leftPanel/files/dark/sync.svg"
+				}
+			},
+			{
+				"command": "ponicode.openInputBoxForRecommendation",
+				"title": "Ponicode: Open input box for recommendation"
+			},
+			{
+				"command": "ponicode.treeView.flashTest",
+				"title": "Flash test this function",
+				"icon": {
+					"light": "images/leftPanel/files/light/flashTest.svg",
+					"dark": "images/leftPanel/files/dark/flashTest.svg"
+				}
+			},
+			{
+				"command": "ponicode.treeView.showEveryFile",
+				"title": "Show all files",
+				"icon": {
+					"light": "images/leftPanel/files/light/wildcard.png",
+					"dark": "images/leftPanel/files/dark/wildcard.png"
+				}
+			},
+			{
+				"command": "ponicode.treeView.showGitDiff",
+				"title": "Show only files that have been changed since last commit",
+				"icon": "$(git-branch)"
+			},
+			{
+				"command": "ponicode.openInputBoxForIncludeExclude",
+				"title": "Ponicode: Open input box to edit Ponicode Side View glob pattern"
+			},
+			{
+				"command": "ponicode.treeView.ignore",
+				"title": "Ponicode Side Panel: Ignore this file",
+				"icon": "$(eye-closed)"
+			},
+			{
+				"command": "ponicode.treeView.unIgnore",
+				"title": "Ponicode Side Panel: Show this file",
+				"icon": "$(eye)"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "ponicode.openInteractiveView",
+				"key": "ctrl+t",
+				"mac": "cmd+t",
+				"when//": "editorTextFocus"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "resourceLangId == javascript || resourceLangId == javascriptreact || resourceLangId == typescript || (resourceLangId == typescriptreact && ponicode:supportTsx)",
+					"command": "ponicode.openInteractiveView",
+					"group": "2_ponicode@1"
+				},
+				{
+					"when": "resourceLangId == python",
+					"command": "ponicode.openInteractiveView",
+					"group": "2_ponicode@1"
+				},
+				{
+					"when": "resourceLangId == javascript || resourceLangId == javascriptreact || resourceLangId == typescript || (resourceLangId == typescriptreact && ponicode:supportTsx) || resourceLangId == java",
+					"command": "ponicode.flashTest",
+					"group": "2_ponicode@2"
+				},
+				{
+					"when": "resourceLangId == javascript && ponicode:hasLastActiveWebview",
+					"command": "ponicode.mock",
+					"group": "2_ponicode@3"
+				},
+				{
+					"when": "resourceLangId == typescript && ponicode:hasLastActiveWebview",
+					"command": "ponicode.mock",
+					"group": "2_ponicode@3"
+				},
+				{
+					"when": "resourceLangId == python && ponicode:hasLastActiveWebview",
+					"command": "ponicode.mock",
+					"group": "2_ponicode@3"
+				},
+				{
+					"when": "resourceLangId == typescript",
+					"command": "ponicode.generateValues",
+					"group": "2_ponicode@4"
+				}
+			],
+			"view/title": [
+				{
+					"command": "ponicode.treeView.toTreeView",
+					"when": "view == ponicodeTreeView && !ponicodeTreeView:tree",
+					"view": "ponicodeTreeView",
+					"title": "Switch to tree view",
+					"group": "navigation@0"
+				},
+				{
+					"command": "ponicode.treeView.toListView",
+					"when": "view == ponicodeTreeView && ponicodeTreeView:tree",
+					"view": "ponicodeTreeView",
+					"title": "Switch to list view",
+					"group": "navigation@0"
+				},
+				{
+					"command": "ponicode.treeView.showGitDiff",
+					"when": "view == ponicodeTreeView && !ponicodeShowGitDiff:active",
+					"view": "ponicodeTreeView",
+					"title": "Show git diff",
+					"group": "navigation@1"
+				},
+				{
+					"command": "ponicode.treeView.showEveryFile",
+					"when": "view == ponicodeTreeView && ponicodeShowGitDiff:active",
+					"view": "ponicodeTreeView",
+					"title": "Show every files",
+					"group": "navigation@1"
+				},
+				{
+					"command": "ponicode.treeView.stop",
+					"when": "view == ponicodeTreeView && ponicodeTreeView:active",
+					"view": "ponicodeTreeView",
+					"title": "Stop search",
+					"group": "navigation@2"
+				},
+				{
+					"command": "ponicode.treeView.resume",
+					"when": "view == ponicodeTreeView && !ponicodeTreeView:active",
+					"view": "ponicodeTreeView",
+					"title": "Resume search",
+					"group": "navigation@2"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "ponicode.treeView.flashTest",
+					"when": "view == ponicodeTreeView && viewItem == function",
+					"group": "inline"
+				},
+				{
+					"command": "ponicode.treeView.ignore",
+					"when": "view == ponicodeTreeView && viewItem == file",
+					"group": "inline"
+				},
+				{
+					"command": "ponicode.treeView.unIgnore",
+					"when": "view == ponicodeIgnoredFiles && viewItem == file",
+					"group": "inline"
+				}
+			],
+			"commandPalette": [
+				{
+					"command": "ponicode.treeView.selectFile",
+					"when": "false"
+				},
+				{
+					"command": "ponicode.treeView.toTreeView",
+					"when": "false"
+				},
+				{
+					"command": "ponicode.treeView.toListView",
+					"when": "false"
+				},
+				{
+					"command": "ponicode.openInBrowser",
+					"when": "false"
+				},
+				{
+					"command": "ponicode.mock",
+					"when": "false"
+				},
+				{
+					"command": "ponicode.treeView.showEveryFile",
+					"when": "ponicodeShowGitDiff:active"
+				},
+				{
+					"command": "ponicode.treeView.showGitDiff",
+					"when": "!ponicodeShowGitDiff:active"
+				},
+				{
+					"command": "ponicode.treeView.stop",
+					"when": "ponicodeTreeView:active"
+				},
+				{
+					"command": "ponicode.treeView.resume",
+					"when": "!ponicodeTreeView:active"
+				},
+				{
+					"command": "ponicode.openInputBoxForIncludeExclude",
+					"when": "false"
+				},
+				{
+					"command": "ponicode.treeView.flashTest",
+					"when": "false"
+				},
+				{
+					"command": "ponicode.treeView.ignore",
+					"when": "false"
+				},
+				{
+					"command": "ponicode.treeView.unIgnore",
+					"when": "false"
+				}
+			]
+		},
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "ponicodeExplorer",
+					"title": "Ponicode",
+					"icon": "images/icon.png"
+				}
+			]
+		},
+		"views": {
+			"ponicodeExplorer": [
+				{
+					"id": "ponicodeTreeView",
+					"name": "Testable Files"
+				},
+				{
+					"id": "ponicodeIgnoredFiles",
+					"name": "Ignored Files",
+					"visibility": "collapsed"
+				},
+				{
+					"id": "ponicodeHelpSection",
+					"name": "Help and Feedback"
+				}
+			]
+		},
+		"viewsWelcome": [
+			{
+				"view": "ponicodeTreeView:active",
+				"contents": "No testable files found yet. Learn more in the Ponicode [documentation](https://ponicode.github.io/#/vscode_extension/).\n"
+			},
+			{
+				"when": "!ponicodeTreeView:active && ponicodeTreeView:ready",
+				"view": "ponicodeTreeView",
+				"contents": "When active, this panel displays a list of files that Ponicode can help you unit test.\n[Enable testable files explorer](command:ponicode.treeView.resume)"
+			}
+		]
+	},
+	"scripts": {
+		"build": "gulp",
+		"watch": "gulp watch",
+		"test": "gulp test",
+		"test:tty": "gulp test:tty",
+		"vsix": "gulp vsix",
+		"webpack": "webpack --mode=development",
+		"prettier": "npm run prettier:package --prefix ../../ packages/vscode-extension",
+		"vscode:prepublish": "gulp ensure-packageable",
+		"//vscode:prepublish": "export NAME=$(jq -r '.name + \"-\" + .version' package.json) && ln -nfs \"$NAME.vsix\" \"$NAME.zip\" && unzip -l \"$NAME.vsix\" | grep -v node_modules | (if grep -q src; then false; fi)"
+	},
+	"__metadata": {
+		"id": "3d127111-d7f9-4812-8cbf-ba2a41a7a04a",
+		"publisherId": "b0b0c4c1-6005-4bca-ab74-64c490df1d61",
+		"publisherDisplayName": "Ponicode",
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1646886834528
+	}
+}

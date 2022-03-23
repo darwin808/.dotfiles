@@ -1,0 +1,43 @@
+<h2 id="-first-time-with-ponicode-">🎉 First Time With Ponicode ? 🎉</h2>
+<p>Glad you made it here!</p>
+<p>Ponicode currently supports the following languages:</p>
+<ul>
+	<li><strong>TypeScript</strong> <i>(Beta)</i></li>
+	<li><strong>JavaScript (CommonJS, ES6, Node, JSX)</strong> <i>(Alpha)</i></li>
+	<li><strong>Python</strong> <i>(Alpha)</i></li>
+</ul>
+<p>
+	If you want to know more about Ponicode, check out the
+	<a style="color: #17a2b8; font-weight: bold; text-decoration: none" href="https://ponicode.github.io/#/"
+		>Ponicode Documentation</a
+	>.
+</p>
+
+<h2 id="get-started-with-ponicode-unit-tests-img-src-logo_pony-png-alt-drawing-width-30-">
+	Get started with Ponicode Unit Tests
+	<img src="https://files.ponicode.com/extension/logo_pony.png" alt="drawing" width="30" />
+</h2>
+<p>Ponicode helps you generate your unit tests in a few clicks, without having to worry about syntax.</p>
+<p>
+	Just open a TypeScript, JavaScript or Python file, look for a Pony icon on the left of your functions and get started!
+	For your first test, we recommend choosing a
+	<i>pure function</i>.
+</p>
+<p>Check out this video for a quick tutorial 👇.</p>
+<p><img src="https://files.ponicode.com/extension/getting_started.gif" width="auto" height="auto" /></p>
+<p>
+	For more video tutorials on how to use Ponicode Unit Tests, check out the
+	<a
+		style="color: #17a2b8; font-weight: bold; text-decoration: none"
+		href="https://www.youtube.com/channel/UCkY2ajdjrBGcMX71Tg9Rjlw/videos"
+		>Ponicode Youtube channel</a
+	>.
+</p>
+
+<!-- Add script to resolve Promise in PonicodeWebview -->
+<script>
+	window.addEventListener("load", function () {
+		const vscode = acquireVsCodeApi()
+		vscode.postMessage({ command: "requeststate" })
+	})
+</script>

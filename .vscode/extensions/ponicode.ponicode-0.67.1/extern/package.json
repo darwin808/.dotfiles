@@ -1,0 +1,13 @@
+{
+	"name": "extern",
+	"version": "0.0.6",
+	"description": "Temporary directory to run test cases",
+	"dependencies": {
+		"rewire": "^5.0.0"
+	},
+	"private": true,
+	"scripts": {
+		"test": "echo No test",
+		"prettier": "echo No need to run prettier here."
+	}
+}

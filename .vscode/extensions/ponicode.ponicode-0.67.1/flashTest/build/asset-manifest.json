@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "./static/css/main.b7afcac3.css",
+    "main.js": "./static/js/main.af4d3a1a.js",
+    "index.html": "./index.html",
+    "precache-manifest.378d19eb2168a333533a65ca1241a288.js": "./precache-manifest.378d19eb2168a333533a65ca1241a288.js",
+    "service-worker.js": "./service-worker.js",
+    "static/js/main.af4d3a1a.js.LICENSE.txt": "./static/js/main.af4d3a1a.js.LICENSE.txt",
+    "static/media/logo.svg": "./static/media/logo.3683599d.svg"
+  },
+  "entrypoints": [
+    "static/css/main.b7afcac3.css",
+    "static/js/main.af4d3a1a.js"
+  ]
+}
