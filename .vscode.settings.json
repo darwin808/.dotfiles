@@ -84,7 +84,7 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "ponicode.token": "757168b5-9355-463e-8ce4-e7044a2bc1f9",
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "editor.lineNumbers": "relative",
+  "editor.lineNumbers": "on",
   "editor.cursorSurroundingLines": 6,
   "editor.cursorBlinking": "solid",
   "editor.cursorStyle": "block",
@@ -92,25 +92,41 @@
   "workbench.colorCustomizations": {
     // "editor.background": "#282828",
     // "editorGutter.background": "#22272E",
-    "editorLineNumber.activeForeground": "#fe8019",
-    // "editorLineNumber.foreground": "#D65D0E",
+    "editorLineNumber.activeForeground": "#02b7ff",
+    // "editorLineNumber.foreground": "#7c6864",
     // "editor.selectionBackground": "#666727",
     "editor.selectionForeground": "#333333",
     // "editor.selectionHighlightBackground": "#fb4934",
-    "editorCursor.foreground": "#FB4934",
+    "editorCursor.foreground": "#fff",
     "editorCursor.background": "#222222",
-    "terminalCursor.foreground": "#fe8019"
-    // "statusBar.background": "#333333",
-    // "statusBar.foreground": "#FE8019",
-    // "statusBar.noFolderBackground": "#212121",
-    // "statusBar.debuggingBackground": "#263238"
+    "terminalCursor.foreground": "#fff",
+    "statusBar.background": "#282828",
+    "statusBar.foreground": "#04a2ec",
+    "statusBar.noFolderBackground": "#212121",
+    "statusBar.debuggingBackground": "#263238"
+    // "editor.selectionBackground": "#3c3836",
+    // "editor.selectionHighlightBackground": "#fabd2f",
+    // "editor.findMatchBackground": "#FABD2F", //Current SEARCH MATCH
+    // "editor.findMatchHighlightBackground": "#ff7b00a1" ,
+    // "editor.selectionHighlightBackground": "#04a2ec", // similar selection
+    // "editor.selectionHighlightBorder": "#0000",
+
+    // "list.focusForeground": "#00ff00",
+    // "editor.wordHighlightStrongBackground": "#fabd2f", // syntax variable assignment
+    // "editor.wordHighlightStrongBorder": "#0000",
+
+    // "editor.wordHighlightBackground": "#fabd2f", // syntax variable
+    // "editor.wordHighlightBorder": "#0000",
+
+    // "editorBracketMatch.border": "#0000", // brackets
+    // "editorBracketMatch.background": "#0000"
   },
   "editor.renderIndentGuides": false,
+  // "editor.fontFamily": "",
   "terminal.integrated.fontFamily": "MesloLGS NF",
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
-  "workbench.iconTheme": "vs-seti",
   "redhat.telemetry.enabled": false,
   "go.toolsManagement.autoUpdate": true,
   "[go]": {
@@ -121,6 +137,7 @@
   "thunder-client.codeSnippetLanguage": "cs-httpclient",
   "bracket-pair-colorizer-2.depreciation-notice": false,
   "window.menuBarVisibility": "toggle",
-  "window.zoomLevel": 2,
-  "workbench.colorTheme": "Bear Theme"
+  "window.zoomLevel": 2.7,
+  "workbench.colorTheme": "Atom One Dark"
 }
+
